@@ -14,9 +14,10 @@ wm = Image.open(watermark)
 # directory where images are to be watermarked
 imagedir = raw_input("Enter image directory: ")
 
+
 # where watermarked images will end up
 # user has to make sure directory already exists
-# outputdir = raw_input("Enter output directory: ")
+outputdir = raw_input("Enter output directory: ")
 
 
 wm_scaling_factor = float(raw_input("Enter watermark scaling factor: "))
@@ -29,8 +30,8 @@ new_y = int(wm.size[1]*wm_scaling_factor)
 
 wm = wm.resize((new_x,new_y),Image.ANTIALIAS)
 
-for infile in glob.glob(imagedir + "*.jpg"):
-        file, ext = os.path.splitext(infile)
+for infile in glob.glob(imagedir + "/*.JPG"):
+        file, ext = os.path.splitext(os.path.basename(infile))
         im = Image.open(infile)
 
        # print "if statement: " + str(max(im.size[0],im.size[1])/float(min(im.size[0],im.size[1])))
@@ -57,4 +58,4 @@ for infile in glob.glob(imagedir + "*.jpg"):
         wm_y = im.size[1]-wm.size[1]-5
         wm_pos = (wm_x,wm_y)
         im.paste(wm, wm_pos, mask=wm)
-        im.save(file + "-wm.jpg")
+        im.save(outputdir + "/" + file + "-wm.jpg")
