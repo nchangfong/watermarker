@@ -7,19 +7,24 @@ from PIL import Image
 from PIL import ImageDraw
 import glob, os
 
-watermark = raw_input("Enter full path to watermark image: ")
+watermark = "./watermarks/" + raw_input("Enter filename of watermark: ")
 wm = Image.open(watermark)
 
 # directory where images are to be watermarked
-imagedir = raw_input("Enter image directory: ")
+# imagedir = raw_input("Enter image directory: ")
+imagedir = "./input"
 
 
 # where watermarked images will end up
 # user has to make sure directory already exists
-outputdir = raw_input("Enter output directory: ")
+# outputdir = raw_input("Enter output directory: ")
+outputdir = "./output"
 
 
-wm_scaling_factor = float(raw_input("Enter watermark scaling factor: "))
+# wm_scaling_factor = float(raw_input("Enter watermark scaling factor: "))
+
+#0.8 is hardcoded value used for hack western
+wm_scaling_factor = 0.8
 
 # new values for watermark after scaling
 new_x = int(wm.size[0]*wm_scaling_factor)
@@ -33,6 +38,7 @@ for infile in glob.glob(imagedir + "/*.JPG"):
        
         # calculates the scaling factor by finding dividing the longer axis of input
         # photo over pixel length of desired output
+	# scaling to 1920 is for hack western facebook photo uploads
         im_scaling_factor = max(im.size[0],im.size[1])/float(1920)
 
         # applying scaling factor to image

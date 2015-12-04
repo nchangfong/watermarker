@@ -8,8 +8,13 @@
 *.png
 *.jpg
 
-# output dirs
-watermarked/
+# input/output dirs
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+watermarks/*
+!watermarks/.gitkeep
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
