@@ -1,14 +1,14 @@
 # watermarker
 
 ### Description
-A program I wrote for adding watermarks to photos using the [Python Imaging Library](http://www.pythonware.com/products/pil/) (PIL) 
+A program I wrote for adding watermarks to photos using the [Python Imaging Library](http://www.pythonware.com/products/pil/) (PIL). It's relatively untested but I've successfully executed the program in a virtual machine running Ubuntu 14.04.3 with only `git` and the VirtualBox Guest Additions installed. 
 
 ### Instructions
-in the watermarker directory create `input`, `output`, and `watermarks` directories.
+In the watermarker directory create `input`, `output`, and `watermarks` directories with the following command:
 
 `mkdir input output watermarks`
 
-Your file structure should look like this:
+Your file structure should now look like this:
 ```
 ├── input/
 ├── output/
@@ -17,11 +17,11 @@ Your file structure should look like this:
 ├── watermarks/
 ```
 
-Place all input files in `input/` as `.JPG` (case-sensitive for now)
+Place all input files (those to be watermarked) in `input/` as `.JPG` (case-sensitive for now)
 
 Place watermark image in `watermarks/`
 
-Execute program by executing following command:
+Execute program by executing the following command:
 `python watermarker.py`
 
-Enter the filename of watermark you'd like to use when prompted and wait for program to finish execution.
+Enter the filename of watermark you'd like to use when prompted, wait for program to finish executing, and then view your watermarked photos in `output`!
