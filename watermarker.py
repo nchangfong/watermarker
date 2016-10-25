@@ -6,7 +6,7 @@ from PIL import Image
 from PIL import ImageDraw
 import glob, os
 
-watermark = "./watermarks/" + raw_input("Enter filename of watermark including extension: ")
+watermark = raw_input("Enter path to watermark including file extension: ")
 wm = Image.open(watermark)
 
 # directory where images are to be watermarked
