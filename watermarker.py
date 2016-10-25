@@ -28,8 +28,8 @@ new_y = int(wm.size[1]*wm_scaling_factor)
 wm = wm.resize((new_x,new_y),Image.ANTIALIAS)
 
 # distance between right and bottom edge of watermark and original photo
-wm_x_offset = float(raw_input("Enter watermark x offset (HW default: 7): "))
-wm_y_offset = float(raw_input("Enter watermark y offset (HW default: 5): "))
+wm_x_offset = int(raw_input("Enter watermark x offset (HW default: 7): "))
+wm_y_offset = int(raw_input("Enter watermark y offset (HW default: 5): "))
 
 for infile in glob.glob(imagedir + "/*.[jJ][pP][gG]"):
         file, ext = os.path.splitext(os.path.basename(infile))
